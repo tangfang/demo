@@ -1,0 +1,12 @@
+<form role="form" ng-submit="btnSubmit()">
+  <div class="form-group">
+    <label for="title">标题</label>
+    <input type="text" class="form-control" id="title" placeholder="标题" ng-model="info.title">
+  </div>
+  <div class="form-group">
+    <label for="content">描述</label>
+    <textarea ck-editor class="form-control" id="content" placeholder="描述" ng-model="info.content"></textarea>
+  </div>
+  <p ng-bind-html="info.content"></p>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

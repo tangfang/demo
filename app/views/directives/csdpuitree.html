@@ -1,0 +1,41 @@
+<div class="csdp-ui-tree">
+  <li class="csdp-ui-tree-node dropdown" ng-class="{'csdp-ui-tree-node-last':$last}" ng-repeat="node in nodes">
+    <i class="node-icon" ng-class="{'open':node.collapse, 'node-icon-children': node.parent}" ng-init="node.collapse=false;" ng-click="collapse(node);node.collapse=!node.collapse;"></i>
+    <a ng-if="!options.contextmenu" title="{{node.title}}"><i ng-class="node.icon"></i>{{node.text}}</a>
+    <a ng-if="options.contextmenu" title="{{node.title}}" ng-click="click($event)" ng-r-click="contextmenu($event)"><i ng-class="node.icon"></i>{{node.text}}</a>
+    <ul ng-if="options.contextmenu" class="dropdown-menu">
+      <li ng-repeat="_item in options.contextmenu">
+        <a class="btn btn-block" ng-disabled="_item.disabled(node)" ng-click="_item.action(node)">{{_item.label}}</a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="_cItem in _item.children">
+            <button ng-disabled="_cItem.disabled(node)" ng-click="_cItem.action(node)"><span>{{_cItem.label}}</span></button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="csdp-ui-tree-children" ng-class="{'hidden':!node.collapse}" ng-if="node.children.length>0">
+      <li class="csdp-ui-tree-node dropdown" ng-class="{'csdp-ui-tree-node-last':$last}" ng-repeat="child in node.children" ng-include="'csdpuitree.html'">
+      </li>
+    </ul>
+  </li>
+</div>
+<script type="text/ng-template" id="csdpuitree.html">
+  <i class="node-icon" ng-class="{'open':child.collapse, 'node-icon-children': child.parent}" ng-init="child.collapse=false;" ng-click="collapse(child);child.collapse=!child.collapse;"></i>
+  <a ng-if="!options.contextmenu"><i ng-class="node.icon"></i>{{child.text}}</a>
+  <a ng-if="options.contextmenu" ng-click="click($event)" ng-r-click="contextmenu($event)"><i ng-class="node.icon"></i>{{child.text}}</a>
+  <ul ng-if="options.contextmenu" class="dropdown-menu">
+    <li ng-repeat="_item in options.contextmenu">
+      <a ng-click="_item.action(node)">{{_item.label}}</a>
+      <ul class="dropdown-menu">
+        <li ng-repeat="_cItem in _item.children">
+          <a ng-click="_cItem.action(node)"><span>{{_cItem.label}}</span></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- <a><i ng-class="child.icon"></i>{{child.text}}</a> -->
+  <ul class="csdp-ui-tree-children" ng-class="{'hidden':!child.collapse}" ng-if="node.children.length>0">
+    <li class="csdp-ui-tree-node dropdown" ng-class="{'csdp-ui-tree-node-last':$last}" ng-repeat="child in child.children" ng-include="'csdpuitree.html'">
+    </li>
+  </ul>
+</script>

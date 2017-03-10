@@ -1,0 +1,19 @@
+<p>{{name}}</p>
+<p ng-bind="user.description"></p>
+<input type="text" ng-model="user.description">
+<button type="button" ng-click="btnClick()">用户点击按钮</button>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="region in regions">
+      <td ng-bind="region.vregionName"></td>
+      <td ng-bind="region.description"></td>
+    </tr>
+  </tbody>
+</table>

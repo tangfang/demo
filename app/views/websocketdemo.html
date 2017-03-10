@@ -1,0 +1,16 @@
+<p>This is the websocketdemo view.{{errorMessage}}</p>
+<p>
+  <button class="btn btn-primary" ng-disabled="isOpen" ng-click="send()">send （angulardemo）</button>
+</p>
+<p>
+  <form class="form-horizontal form-row-stripped">
+    <div class="form-body">
+      <div class="form-group">
+        <label class="control-label col-md-3">来自服务器的推送消息：</label>
+        <div class="controls col-md-6">
+          <textarea  ng-model="messages" class="form-control"  rows="10"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</p>

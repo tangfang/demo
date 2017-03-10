@@ -1,0 +1,21 @@
+[{
+  "uuid": "100101",
+  "regionName": "北京资源节点A",
+  "vregionId": "1001"
+},{
+  "uuid": "100102",
+  "regionName": "北京资源节点B",
+  "vregionId": "1001"
+},{
+  "uuid": "100103",
+  "regionName": "北京资源节点C",
+  "vregionId": "1001"
+},{
+  "uuid": "100104",
+  "regionName": "北京资源节点D",
+  "vregionId": "1001"
+},{
+  "uuid": "100301",
+  "regionName": "广州资源节点",
+  "vregionId": "1003"
+}]
