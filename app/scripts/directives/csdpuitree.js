@@ -7,13 +7,13 @@
  * # csdpUiTree
  */
 angular.module('demoApp')
-  .directive('csdpUiTree', function ($parse) {
+  .directive('csdpUiTree', function () {
     return {
       templateUrl: 'views/directives/csdpuitree.html',
       // require: ['ngModel'],
       restrict: 'AE',
       scope: true,
-      link: function postLink(scope, element, attrs, ctrl) {
+      link: function postLink(scope, element, attrs) {
         scope.$watch(attrs.ngModel, function(){
           scope.nodes = scope.$parent[attrs.ngModel];
         });
@@ -27,7 +27,7 @@ angular.module('demoApp')
         //   };
         // }
         angular.element('body').on('click', function(){
-          console.log(angular.element('.csdp-ui-tree-node.dropdown'))
+          console.log(angular.element('.csdp-ui-tree-node.dropdown'));
           angular.element('.csdp-ui-tree-node.dropdown').removeClass('open');
         });
         var options = scope.$eval(attrs.options);

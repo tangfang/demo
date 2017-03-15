@@ -12,7 +12,8 @@
     "angular-touch": "^1.4.0",
     "angular-ui-tree": "^2.16.0",
     "ckeditor-dev": "4.5.11",
-    "ueditor": "1.4.3"
+    "ueditor": "1.4.3",
+    "ngAnimate": "*"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
@@ -20,8 +21,16 @@
   "appPath": "app",
   "moduleName": "demoApp",
   "overrides": {
+    "ngAnimate": {
+      "main": [
+        "css/ng-animation.css"
+      ]
+    },
     "ueditor": {
-      "main": ["ueditor.config.js", "ueditor.parse.js"]
+      "main": [
+        "ueditor.config.js",
+        "ueditor.parse.js"
+      ]
     },
     "ckeditor-dev": {
       "main": [

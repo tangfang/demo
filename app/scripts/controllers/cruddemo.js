@@ -23,6 +23,7 @@ angular.module('demoApp')
 
     //删除用户
     $scope.remove = function(user){
+      console.log(user);
       /*$http({
         method: 'DELETE',
         url: 'api/v2/user'

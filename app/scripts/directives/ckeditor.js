@@ -23,7 +23,7 @@ angular.module('demoApp')
             {name: 'basicstyles', items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']},
             {name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
             {name: 'styles', items: ['Styles', 'Format']}
-          ]
+          ];
         };
         
         edit.on('change', function(evt){

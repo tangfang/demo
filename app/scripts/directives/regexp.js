@@ -7,7 +7,7 @@
  * # regExp
  */
 angular.module('demoApp')
-  .directive('regExp', function () {
+  .directive('regExp', function ($RegExp) {
     /*<input reg-exp="name,length">*/
     return {
       require: 'ngModel',
@@ -43,7 +43,7 @@ angular.module('demoApp')
             };
             ctrl.$validators[_regExp].$errorMessage = function(){
               return $RegExp[_regExp].errorMessage;
-            }
+            };
           }
           /*ctrl.$validators.pattern = function(modelValue, viewValue) {
             // HTML5 pattern constraint validates the input value, so we validate the viewValue

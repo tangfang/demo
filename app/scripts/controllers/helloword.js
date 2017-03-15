@@ -19,14 +19,14 @@ angular.module('demoApp')
     };
 
     $scope.regions = [{
-      "uuid": "1001",
-      "vregionName": "北京",
-      "description": "北京域描述北京域描述北京域描述北京域描述"
+      'uuid': '1001',
+      'vregionName': '北京',
+      'description': '北京域描述北京域描述北京域描述北京域描述'
     },{
-      "uuid": "1002",
-      "vregionName": "上海"
+      'uuid': '1002',
+      'vregionName': '上海'
     },{
-      "uuid": "1003",
-      "vregionName": "广州"
+      'uuid': '1003',
+      'vregionName': '广州'
     }];
   });

@@ -61,10 +61,10 @@ angular
         controller: 'CkeditordemoCtrl',
         controllerAs: 'ckeditordemo'
       })
-      .when('/ueditordemo', {
-        templateUrl: 'views/ueditordemo.html',
-        controller: 'UeditordemoCtrl',
-        controllerAs: 'ueditordemo'
+      .when('/ng-animatedemo', {
+        templateUrl: 'views/ng-animatedemo.html',
+        controller: 'NgAnimatedemoCtrl',
+        controllerAs: 'ngAnimatedemo'
       })
       .otherwise({
         redirectTo: '/'
