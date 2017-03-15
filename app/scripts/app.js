@@ -66,6 +66,11 @@ angular
         controller: 'NgAnimatedemoCtrl',
         controllerAs: 'ngAnimatedemo'
       })
+      .when('/animate.css', {
+        templateUrl: 'views/animate.css.html',
+        controller: 'AnimateCssCtrl',
+        controllerAs: 'animate.css'
+      })
       .otherwise({
         redirectTo: '/'
       });

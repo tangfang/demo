@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name demoApp.controller:NgAnimatedemoCtrl
+ * @name demoApp.controller:AnimateCssCtrl
  * @description
- * # NgAnimatedemoCtrl
+ * # AnimateCssCtrl
  * Controller of the demoApp
  */
 angular.module('demoApp')
-  .controller('NgAnimatedemoCtrl', function ($scope, $timeout) {
+  .controller('AnimateCssCtrl', function ($scope, $timeout) {
     var list = [{
       uuid: '1001',
       resourceType: '云主机1',
@@ -64,6 +64,6 @@ angular.module('demoApp')
     angular.forEach(list, function(item, i){
       $timeout(function() {
         $scope.subOrders.push(item);
-      }, 100 * i);
+      }, 200 * i);
     });
   });

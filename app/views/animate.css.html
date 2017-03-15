@@ -1,0 +1,30 @@
+<div class="box animated fadeInDown" style="border:1px solid #e0e0e0;border-radius: 0;" ng-repeat="subOrder in subOrders">
+  <div class="box-header" style="background-color: #f9f9f9;border-bottom:1px solid #e0e0e0;">
+    <h6 ng-bind="subOrder.resourceType" style="margin-top: 0;margin-bottom: 0;font-size: 15px;"></h6>
+    <span style="float:right;margin-top: -18px;">
+      <button class="btn btn-info mr-5 btn-xs confirmation" confirmation="deleteBtn[0].confirmation" ng-click="deleteBtn[0].click(subOrder)" ng-disabled="orderNo!==''&&order.subOrders.length<=1">删除&nbsp;<i class="fa fa-trash"></i>
+      </button>
+    </span>
+  </div>
+  <div class="box-body" style="font-size: 14px;padding: 20px;">
+    <div ng-repeat="property in subOrder.subOrder_Properties | orderBy:'sequence'" ng-if="property.isshow === '1' || property.isshow === 'true' || property.isshow === true">
+      <span class="font-title" ng-bind="property.propertyDisplay" ng-if="property.propertyValue!==''"></span>
+      <span ng-if="property.propertyValue!==''">：</span>
+      <!-- 属性值 -->
+      <span ng-if="property.propertyName!=='resource_pool'&& property.propertyName!=='scaleTypeId'&&property.propertyName!=='ip'&&property.propertyName!=='vm_id'" ng-cloak>{{property.propertyValue+(property.propertyName)}}</span>
+      <!-- 可用区 -->
+      <span ng-if="property.propertyName ==='resource_pool'" ng-bind="respools[property.propertyValue]"></span>
+      <!-- 物理服务器模型 -->
+      <span ng-if="property.propertyName ==='scaleTypeId'" ng-bind="modelName[property.propertyValue]"></span>
+      <!-- 物理机IP -->
+      <span ng-if="property.propertyName ==='ip'" ng-bind="property.propertyValue"></span>
+      <!-- 资源规划 -->
+      <!-- <span ng-if="property.propertyName ==='is_plan'" ng-bind="orPlans[property.propertyValue]"></span> -->
+      <!-- 挂载云主机 -->
+      <span ng-if="property.propertyName ==='vm_id'" ng-bind="vmName[property.propertyValue]"></span>
+    </div>
+    <!-- <div ng-if="subOrder.action !== 'create_network'">租期：<span class="lease" ng-bind="subOrder.lease | changeChinese"></span> 
+    </div>-->
+    <div ng-if="subOrder.action !== 'create_network' || subOrder.action !== 'create_phyresource'"><span class="font-title">购买数量</span>：<span class="number" ng-bind="subOrder.numbers + ' ' +(subOrder.resourceType)"></span></div>
+  </div>
+</div>

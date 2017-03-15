@@ -13,7 +13,8 @@
     "angular-ui-tree": "^2.16.0",
     "ckeditor-dev": "4.5.11",
     "ueditor": "1.4.3",
-    "ngAnimate": "*"
+    "ngAnimate": "*",
+    "animate.css": "^3.5.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
