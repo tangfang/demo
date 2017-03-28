@@ -66,4 +66,14 @@ angular.module('demoApp')
         $scope.subOrders.push(item);
       }, 100 * i);
     });
+
+    $scope.removeItem = function(item){
+      var index = $scope.subOrders.indexOf(item);
+      $scope.subOrders.remove(index);
+    };
   });
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};

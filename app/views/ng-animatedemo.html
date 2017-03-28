@@ -2,7 +2,7 @@
   <div class="box-header" style="background-color: #f9f9f9;border-bottom:1px solid #e0e0e0;">
     <h6 ng-bind="subOrder.resourceType" style="margin-top: 0;margin-bottom: 0;font-size: 15px;"></h6>
     <span style="float:right;margin-top: -18px;">
-      <button class="btn btn-info mr-5 btn-xs confirmation" confirmation="deleteBtn[0].confirmation" ng-click="deleteBtn[0].click(subOrder)" ng-disabled="orderNo!==''&&order.subOrders.length<=1">删除&nbsp;<i class="fa fa-trash"></i>
+      <button class="btn btn-info mr-5 btn-xs confirmation" confirmation="deleteBtn[0].confirmation" ng-click="removeItem(subOrder)" ng-disabled="orderNo!==''&&order.subOrders.length<=1">删除&nbsp;<i class="fa fa-trash"></i>
       </button>
     </span>
   </div>
