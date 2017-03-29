@@ -66,6 +66,19 @@ angular.module('demoApp')
         $scope.subOrders.push(item);
       }, 200 * i);
     });
+    $scope.addItem = function(){
+      $scope.subOrders.push({
+        uuid: '1006',
+        resourceType: '云主机6',
+        propertyDisplay: '云主机6',
+        subOrder_Properties: [{
+          sequence: 2,
+          isshow: '1',
+          propertyValue: '1',
+          propertyName: 'resource_pool'
+        }]
+      });
+    };
     $scope.removeItem = function(item){
       angular.element('#'+item.uuid).removeClass().addClass('animated fadeOutDown');
       angular.element('#'+item.uuid).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){

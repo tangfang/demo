@@ -1,4 +1,4 @@
-{{subOrders}}
+<button type="button" ng-click="addItem()">add</button>
 <div id="{{subOrder.uuid}}" class="box animated fadeInDown" style="border:1px solid #e0e0e0;border-radius: 0;" ng-repeat="subOrder in subOrders">
   <div class="box-header" style="background-color: #f9f9f9;border-bottom:1px solid #e0e0e0;">
     <h6 ng-bind="subOrder.resourceType" style="margin-top: 0;margin-bottom: 0;font-size: 15px;"></h6>

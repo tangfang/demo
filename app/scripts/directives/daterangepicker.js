@@ -32,45 +32,51 @@ angular.module('demoApp')
     return {
       restrict: 'A',
       scope: {
-        startDate: '=',
-        endDate: '=',
-        min: '=',
-        max: '=',
-        model: '=ngModel',
+        // startDate: '=',
+        // endDate: '=',
+        // min: '=',
+        // max: '=',
+        // model: '=ngModel',
         options: '='
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
         var optionsDefault = {}, options;
         if(element.prop('tagName') !== 'INPUT') {
           console.error('Date Range Picker works only with input fields!');
           return;
         }
-        if(scope.min) {
-          optionsDefault.minDate = scope.min;
-        }
-        if(scope.max) {
-          optionsDefault.maxDate = scope.max;
-        }
-        if(scope.startDate) {
-          optionsDefault.startDate = scope.startDate;
-        }
-        if(scope.endDate) {
-          optionsDefault.endDate = scope.endDate;
-        }
-        options = angular.extend({}, optionsDefault, dateRangePickerConfig, scope.options);
-        element.daterangepicker(options, function (start, end) {
-          scope.startDate = start.format(options.locale.format);
-          scope.endDate = end.format(options.locale.format);
-          scope.$apply();
+        // if(scope.min) {
+        //   optionsDefault.minDate = scope.min;
+        // }
+        // if(scope.max) {
+        //   optionsDefault.maxDate = scope.max;
+        // }
+        // if(scope.startDate) {
+        //   optionsDefault.startDate = scope.startDate;
+        // }
+        // if(scope.endDate) {
+        //   optionsDefault.endDate = scope.endDate;
+        // }
+        
+        scope.$watch('options', function(newValue){
+          options = angular.extend({}, optionsDefault, dateRangePickerConfig, newValue);
+          console.log(options);
+          element.daterangepicker(options);
         });
-        scope.$watch('startDate', function(newValue, oldValue){
-          console.log(newValue + '-----' + oldValue);
-          element.data('daterangepicker').setStartDate(newValue);
-        });
-        scope.$watch('endDate', function(newValue, oldValue){
-          console.log(newValue + '-----' + oldValue);
-          element.data('daterangepicker').setEndDate(newValue);
-        });
+        // element.daterangepicker(options, function (start, end) {
+        //   scope.$apply(function(){
+        //     scope.startDate = start.format(options.locale.format);
+        //     scope.endDate = end.format(options.locale.format);
+        //   });
+        // });
+        // scope.$watch('startDate', function(newValue, oldValue){
+        //   console.log(newValue + '-----' + oldValue);
+        //   element.data('daterangepicker').setStartDate(newValue);
+        // });
+        // scope.$watch('endDate', function(newValue, oldValue){
+        //   console.log(newValue + '-----' + oldValue);
+        //   element.data('daterangepicker').setEndDate(newValue);
+        // });
       }
     };
   }]);
