@@ -81,12 +81,12 @@ angular.module('demoApp')
     };
     $scope.removeItem = function(item){
       angular.element('#'+item.uuid).removeClass().addClass('animated fadeOutDown');
-      angular.element('#'+item.uuid).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $scope.$apply(function(){
+      // angular.element('#'+item.uuid).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      //   $scope.$apply(function(){
           var index = $scope.subOrders.indexOf(item);
           $scope.subOrders.remove(index);
-        });
-      });
+      //   });
+      // });
     };
   });
 Array.prototype.remove = function(from, to) {
