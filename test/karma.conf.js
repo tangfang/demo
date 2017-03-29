@@ -33,6 +33,8 @@ module.exports = function(config) {
       'bower_components/ckeditor-dev/ckeditor.js',
       'bower_components/ueditor/ueditor.config.js',
       'bower_components/ueditor/ueditor.parse.js',
+      'bower_components/moment/moment.js',
+      'bower_components/bootstrap-daterangepicker/daterangepicker.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

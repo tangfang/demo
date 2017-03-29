@@ -1,0 +1,5 @@
+<p>{{daterange}}</p>
+<p>{{startDate}}</p>
+<p>{{endDate}}</p>
+<button type="button" ng-click="reset()">reset</button>
+<input type="text" name="daterange" date-range-picker ng-model="daterange" start-date="startDate" end-date="endDate" ng-change="changeDateRange(startDate,endDate)"  style="min-width: 320px;" max="maxDate" min="minDate" options="dateRangeOptions">

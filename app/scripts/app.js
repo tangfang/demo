@@ -71,6 +71,11 @@ angular
         controller: 'AnimateCssCtrl',
         controllerAs: 'animate.css'
       })
+      .when('/daterangepickerdemo', {
+        templateUrl: 'views/daterangepickerdemo.html',
+        controller: 'DaterangepickerdemoCtrl',
+        controllerAs: 'daterangepickerdemo'
+      })
       .otherwise({
         redirectTo: '/'
       });

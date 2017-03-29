@@ -12,6 +12,7 @@
   "unused": true,
   "globals": {
     "angular": false,
-    "CKEDITOR": false
+    "CKEDITOR": false,
+    "moment": false
   }
 }

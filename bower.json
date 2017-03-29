@@ -14,7 +14,8 @@
     "ckeditor-dev": "4.5.11",
     "ueditor": "1.4.3",
     "ngAnimate": "*",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "bootstrap-daterangepicker": "^2.1.25"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
